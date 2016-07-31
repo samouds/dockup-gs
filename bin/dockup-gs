@@ -27,7 +27,9 @@ def do_call(cmd):
 
 # gcloud auth
 account = json.loads(args.gc_key)['client_email']
+project_id = json.loads(args.gc_key)['project_id']
 do_call(['gcloud', 'config', 'set', 'account', account])
+do_call(['gcloud', 'config', 'set', 'project', project_id])
 with NamedTemporaryFile() as key_file:
     key_file.write(args.gc_key)
     key_file.flush()
