@@ -14,7 +14,7 @@ Backup a local directory `foo` to a google storage bucket every hour.
 ```
 docker run -ti \
   -v $(pwd)/foo:/foo \
-  slakah/dockup-gs \
+  samoud/dockup-gs \
   gs://backup-bucket/test/ /foo \
   --backup-name test \
   --no-restore \
@@ -25,7 +25,7 @@ Restore and then periodically back up a mysql container to google storage everyd
 
 ```
 dockup-gs:
-  image: slakah/dockup-gs
+  image: samoud/dockup-gs
   volumes_from:
     - mysql
   command: >
